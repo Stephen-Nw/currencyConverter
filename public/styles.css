@@ -1,0 +1,24 @@
+.personalCard {
+    max-width: 40%;
+    margin-left: 25%;
+    
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    margin: 0;
+    padding: 0;
+  }
+
+.card-text {
+    word-wrap: break-word;
+    overflow: hidden;
+    /* background-color: blue; */  
+}
+
+.test {
+    color: blue;
+}
