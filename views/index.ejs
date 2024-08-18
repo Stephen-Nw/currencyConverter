@@ -56,14 +56,21 @@
          <section class="mt-5">
             <form id="myForm">
                 <p class="exchangeLabel"><label for="">Your Country</label></p>
-                <select id="yourCountry">
+                <select id="yourCountry" name="yourCountry">
                   <option>Select Your Country</option>
                 </select>
+
+                <p class="exchangeLabel"><label for="">Recipient Country</label></p>
+                <select id="recipientCountry" name="recipientCountry">
+                  <option>Select Recipient Country</option>
+                </select>
+
             </form>
 
             <script>
-                var select = document.getElementById("yourCountry");
-                var options = ["Afghanistan", "Albania", "Algeria", "Angola", "Argentina", "Armenia", 
+                var yourCountry = document.getElementById("yourCountry");
+                var recipientCountry = document.getElementById("recipientCountry");
+                var countryList = ["Afghanistan", "Albania", "Algeria", "Angola", "Argentina", "Armenia", 
                 "Aruba", "Australia", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", 
                 "Belarus", "Belize", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", 
                 "Brazil", "Brunei", "Bulgaria", "Burundi", "Cambodia", "Canada", "Cape Verde", "Cayman Islands", 
@@ -85,12 +92,20 @@
                 "Uganda", "Ukraine", "United Arab Emirates",  "United Kingdom", "United States", "Uruguay", 
                 "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe",];
 
-                for(var i = 0; i < options.length; i++) {
-                    var opt = options[i];
+                for(var i = 0; i < countryList.length; i++) {
+                    var opt = countryList[i];
                     var el = document.createElement("option");
                     el.textContent = opt;
                     el.value = opt;
-                    select.appendChild(el);
+                    yourCountry.appendChild(el);
+                }
+
+                for(var i = 0; i < countryList.length; i++) {
+                    var opt = countryList[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    recipientCountry.appendChild(el);
                 }
             </script>
 
