@@ -28,8 +28,17 @@
     font-weight: bolder;
 }
 
-.exchangeLabel {
+.donorLabel {
+    margin-bottom: 30px;
+    margin-right: 5px;
+    margin-left: 150px;
+    font-weight: bolder;
+}
+
+
+.recipientLabel {
     margin-bottom: 0px;
     margin-right: 5px;
+    margin-left: 150px;
     font-weight: bolder;
 }
