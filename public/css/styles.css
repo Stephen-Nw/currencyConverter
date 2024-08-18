@@ -27,3 +27,8 @@
     color: rgb(17, 27, 48);
     font-weight: bolder;
 }
+
+.exchangeLabel {
+    margin-bottom: 0px;
+    font-weight: bolder;
+}

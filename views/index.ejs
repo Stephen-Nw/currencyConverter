@@ -53,9 +53,52 @@
             </div>
           </div>
         <!-- Main -->
+         <section class="mt-5">
+            <form id="myForm">
+                <p class="exchangeLabel"><label for="">Your Country</label></p>
+                <select id="yourCountry">
+                  <option>Select Your Country</option>
+                </select>
+            </form>
+
+            <script>
+                var select = document.getElementById("yourCountry");
+                var options = ["Afghanistan", "Albania", "Algeria", "Angola", "Argentina", "Armenia", 
+                "Aruba", "Australia", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", 
+                "Belarus", "Belize", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", 
+                "Brazil", "Brunei", "Bulgaria", "Burundi", "Cambodia", "Canada", "Cape Verde", "Cayman Islands", 
+                "Chile", "China", "Colombia", "Comoros", "Costa Rica", "Croatia", "Cuba", "Czech Republic", 
+                "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominican Republic", "Egypt", 
+                "Eritrea", "Eswatini", "Ethiopia", "European Union", "Falkland Islands", "Faroe Islands", 
+                "Fiji", "Georgia", "Ghana", "Gibraltar", "Guatemala", "Guernsey", "Guinea", "Guyana", "Haiti", 
+                "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Isle of Man", 
+                "Israel", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", 
+                "Kyrgyzstan", "Laos", "Lebanon", "Lesotho", "Liberia", "Libya", "Macau", "Madagascar", "Malawi", 
+                "Malaysia", "Maldives", "Mauritania", "Mauritius", "Mexico", "Moldova", "Mongolia", "Morocco", 
+                "Mozambique", "Myanmar", "Namibia", "Nepal", "Netherlands Antilles", "New Zealand", "Nicaragua", 
+                "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", 
+                "Peru", "Philippines", "Poland", "Qatar", "Romania", "Russia", "Rwanda", "Saint Helena", "Samoa", 
+                "São Tomé and Príncipe", "Saudi Arabia", "Serbia", "Seychelles", "Sierra Leone", "Singapore", 
+                "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Sri Lanka", "Sudan", 
+                "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", 
+                "The Gambia", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", 
+                "Uganda", "Ukraine", "United Arab Emirates",  "United Kingdom", "United States", "Uruguay", 
+                "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe",];
+
+                for(var i = 0; i < options.length; i++) {
+                    var opt = options[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                }
+            </script>
+
+
+
+         </section>
         <!-- Footer -->
     
-
 
 
 
