@@ -61,14 +61,16 @@
                     <option>Select Your Country</option>
                     </select>
 
-                    <label class="exchangeLabel" for="">Recipient Country</label>
-                    <select id="recipientCountry" name="recipientCountry">
-                    <option>Select Recipient Country</option>
+                    <label class="exchangeLabel" for="">Foreign Country</label>
+                    <select id="foreignCountry" name="foreignCountry">
+                    <option>Select Foreign Country</option>
                     </select> 
                 </div>
                 <div>
                     <label class="exchangeLabel" for="">Your Amount</label>
                     <input type="text" id="yourAmount" name="yourAmount" placeholder="Enter your amount" size="37" required>
+                    <label class="exchangeLabel" for="">Foriegn Amount</label>
+                    <input type="text" id="foreignAmount" name="foreignAmount" placeholder="Recipient received amount" size="37" readonly>
                 </div>
                 
 
@@ -77,7 +79,7 @@
             <script>
                 // Create list of countries in dropdown for both donor and recipient countries.
                 var yourCountry = document.getElementById("yourCountry");
-                var recipientCountry = document.getElementById("recipientCountry");
+                var foreignCountry = document.getElementById("foreignCountry");
                 var countryList = ["Afghanistan (AFN )", "Albania (ALL )", "Algeria (DZD )", "Angola (AOA )", "Argentina (ARS )", 
                 "Armenia (AMD )", "Aruba (AWG )", "Australia (AUD )", "Azerbaijan (AZN )", "Bahamas (BSD )", "Bahrain (BHD )", 
                 "Bangladesh (BDT )", "Barbados (BBD )", "Belarus (BYN )", "Belize (BZD )", "Bermuda (BMD )", "Bhutan (BTN )", 
@@ -118,7 +120,7 @@
                     var el = document.createElement("option");
                     el.textContent = opt;
                     el.value = opt;
-                    recipientCountry.appendChild(el);
+                    foreignCountry.appendChild(el);
                 }
             </script>
 
