@@ -56,15 +56,18 @@
          <section class="mt-5">
             <form id="myForm">
                 <div>
-                    <label class="donorLabel" for="">Your Country</label>
+                    <label class="exchangeLabel" for="">Your Country</label>
                     <select id="yourCountry" name="yourCountry">
                     <option>Select Your Country</option>
                     </select>
 
-                    <label class="recipientLabel" for="">Recipient Country</label>
+                    <label class="exchangeLabel" for="">Recipient Country</label>
                     <select id="recipientCountry" name="recipientCountry">
                     <option>Select Recipient Country</option>
                     </select> 
+                </div>
+                <div>
+                    <p class="exchangeLabel">Exchange Rate</p>
                 </div>
                 
 
@@ -74,27 +77,32 @@
                 // Create list of countries in dropdown for both donor and recipient countries.
                 var yourCountry = document.getElementById("yourCountry");
                 var recipientCountry = document.getElementById("recipientCountry");
-                var countryList = ["Afghanistan", "Albania", "Algeria", "Angola", "Argentina", "Armenia", 
-                "Aruba", "Australia", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", 
-                "Belarus", "Belize", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", 
-                "Brazil", "Brunei", "Bulgaria", "Burundi", "Cambodia", "Canada", "Cape Verde", "Cayman Islands", 
-                "Chile", "China", "Colombia", "Comoros", "Costa Rica", "Croatia", "Cuba", "Czech Republic", 
-                "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominican Republic", "Egypt", 
-                "Eritrea", "Eswatini", "Ethiopia", "European Union", "Falkland Islands", "Faroe Islands", 
-                "Fiji", "Georgia", "Ghana", "Gibraltar", "Guatemala", "Guernsey", "Guinea", "Guyana", "Haiti", 
-                "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Isle of Man", 
-                "Israel", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", 
-                "Kyrgyzstan", "Laos", "Lebanon", "Lesotho", "Liberia", "Libya", "Macau", "Madagascar", "Malawi", 
-                "Malaysia", "Maldives", "Mauritania", "Mauritius", "Mexico", "Moldova", "Mongolia", "Morocco", 
-                "Mozambique", "Myanmar", "Namibia", "Nepal", "Netherlands Antilles", "New Zealand", "Nicaragua", 
-                "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", 
-                "Peru", "Philippines", "Poland", "Qatar", "Romania", "Russia", "Rwanda", "Saint Helena", "Samoa", 
-                "São Tomé and Príncipe", "Saudi Arabia", "Serbia", "Seychelles", "Sierra Leone", "Singapore", 
-                "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Sri Lanka", "Sudan", 
-                "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", 
-                "The Gambia", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", 
-                "Uganda", "Ukraine", "United Arab Emirates",  "United Kingdom", "United States", "Uruguay", 
-                "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe",];
+                var countryList = ["Afghanistan (AFN )", "Albania (ALL )", "Algeria (DZD )", "Angola (AOA )", "Argentina (ARS )", 
+                "Armenia (AMD )", "Aruba (AWG )", "Australia (AUD )", "Azerbaijan (AZN )", "Bahamas (BSD )", "Bahrain (BHD )", 
+                "Bangladesh (BDT )", "Barbados (BBD )", "Belarus (BYN )", "Belize (BZD )", "Bermuda (BMD )", "Bhutan (BTN )", 
+                "Bolivia (BOB )", "Bosnia and Herzegovina (BAM )", "Botswana (BWP )", "Brazil (BRL )", "Brunei (BND )", 
+                "Bulgaria (BGN )", "Burundi (BIF )", "Cambodia (KHR )", "Canada (CAD )", "Cape Verde (CVE )", "Cayman Islands (KYD )", 
+                "CEMAC (XAF )", "CFA (XOF )", "Chile (CLP )", "China (CNY )", "Colombia (COP )", "Comoros (KMF )", "Costa Rica (CRC )", 
+                "Croatia (HRK )", "Cuba (CUP )", "Czech Republic (CZK )", "Democratic Republic of the Congo (CDF )", "Denmark (DKK )", 
+                "Djibouti (DJF )", "Dominican Republic (DOP )", "Egypt (EGP )", "Eritrea (ERN )", "Eswatini (SZL )", "Ethiopia (ETB )", 
+                "European Union (EUR )", "Falkland Islands (FKP )", "Faroe Islands (FOK )", "Fiji (FJD )", "Georgia (GEL )", "Ghana (GHS )", 
+                "Gibraltar (GIP )", "Guatemala (GTQ )", "Guernsey (GGP )", "Guinea (GNF )", "Guyana (GYD )", "Haiti (HTG )", 
+                "Honduras (HNL )", "Hong Kong (HKD )", "Hungary (HUF )", "Iceland (ISK )", "India (INR )", "Indonesia (IDR )", 
+                "Iran (IRR )", "Iraq (IQD )", "Isle of Man (IMP )", "Israel (ILS )", "Jamaica (JMD )", "Japan (JPY )", "Jersey (JEP )", 
+                "Jordan (JOD )", "Kazakhstan (KZT )", "Kenya (KES )", "Kiribati (KID )", "Kuwait (KWD )", "Kyrgyzstan (KGS )", "Laos (LAK )", 
+                "Lebanon (LBP )", "Lesotho (LSL )", "Liberia (LRD )", "Libya (LYD )", "Macau (MOP )", "Madagascar (MGA )", "Malawi (MWK )", 
+                "Malaysia (MYR )", "Maldives (MVR )", "Mauritania (MRU )", "Mauritius (MUR )", "Mexico (MXN )", "Moldova (MDL )", 
+                "Mongolia (MNT )", "Morocco (MAD )", "Mozambique (MZN )", "Myanmar (MMK )", "Namibia (NAD )", "Nepal (NPR )", 
+                "Netherlands Antilles (ANG )", "New Zealand (NZD )", "Nicaragua (NIO )", "Nigeria (NGN )", "North Macedonia (MKD )", 
+                "Norway (NOK )", "Oman (OMR )", "Pakistan (PKR )", "Panama (PAB )", "Papua New Guinea (PGK )", "Paraguay (PYG )", "Peru (PEN )", 
+                "Philippines (PHP )", "Poland (PLN )", "Qatar (QAR )", "Romania (RON )", "Russia (RUB )", "Rwanda (RWF )", "Saint Helena (SHP )", 
+                "Samoa (WST )", "São Tomé and Príncipe (STN )", "Saudi Arabia (SAR )", "Serbia (RSD )", "Seychelles (SCR )", "Sierra Leone (SLE )", 
+                "Singapore (SGD )", "Solomon Islands (SBD )", "Somalia (SOS )", "South Africa (ZAR )", "South Korea (KRW )", "South Sudan (SSP )", 
+                "Sri Lanka (LKR )", "Sudan (SDG )", "Suriname (SRD )", "Sweden (SEK )", "Switzerland (CHF )", "Syria (SYP )", "Taiwan (TWD )", 
+                "Tajikistan (TJS )", "Tanzania (TZS )", "Thailand (THB )", "The Gambia (GMD )", "Tonga (TOP )", "Trinidad and Tobago (TTD )", 
+                "Tunisia (TND )", "Turkey (TRY )", "Turkmenistan (TMT )", "Tuvalu (TVD )", "Uganda (UGX )", "Ukraine (UAH )", 
+                "United Arab Emirates (AED )", "United Kingdom (GBP )", "United States (USD )", "Uruguay (UYU )", "Uzbekistan (UZS )", 
+                "Vanuatu (VUV )", "Venezuela (VES )", "Vietnam (VND )", "Yemen (YER )", "Zambia (ZMW )", "Zimbabwe (ZWL )", ];
 
                 for(var i = 0; i < countryList.length; i++) {
                     var opt = countryList[i];
