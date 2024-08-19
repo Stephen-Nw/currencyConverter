@@ -53,12 +53,15 @@
     margin-left: 9px;
 }
 
-/* body {
-    background-color: black;
-    min-height: 100vh;
-    height: 100vh;
-} */
 
 .footer {
-    margin-top: 150px;
+    margin-top: 50px;
+    /* margin-left: 30px; */
+}
+
+.exchange {
+    padding-top: 50px;
+    margin-top: 55px;
+    margin-left: 190px;
+    margin-bottom: 0px;
 }
