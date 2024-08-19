@@ -28,18 +28,10 @@
     font-weight: bolder;
 }
 
-.donorLabel {
-    margin-bottom: 30px;
-    margin-right: 5px;
-    margin-left: 150px;
-    font-weight: bolder;
-}
-
-
-.recipientLabel {
+.foreignLabel {
     margin-bottom: 0px;
-    margin-right: 5px;
-    margin-left: 150px;
+    margin-right: 15px;
+    margin-left: 108px;
     font-weight: bolder;
 }
 
