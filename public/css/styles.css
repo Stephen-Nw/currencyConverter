@@ -45,7 +45,14 @@
 
 .exchangeLabel {
     margin-bottom: 30px;
-    margin-right: 5px;
+    margin-right: 15px;
     margin-left: 150px;
+    font-weight: bolder;
+}
+
+.exchangeRate {
+    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 145px;
     font-weight: bolder;
 }
