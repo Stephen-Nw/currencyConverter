@@ -71,20 +71,17 @@
                     <input type="text" id="yourAmount" name="yourAmount" placeholder="Enter your amount" size="37" required>
                     <input type="submit" value="Go">
                     <label class="foreignLabel" for="">Foriegn Amount</label>
-                    <input type="text" id="foreignAmount" name="foreignAmount" placeholder="Foreign amount" size="37" readonly>
+                    <input  type="text" id="foreignAmount" name="foreignAmount" placeholder="Foreign amount" size="37" readonly>
                 </div>
                 <div>
                     <label class="exchangeRate">Exchange Rate</label>
                     <input  type="text" id="exchangeAmount" name="exchangeAmount" value="1" size="24" readonly>
                     <input  type="text" id="exchangeAmount" name="exchangeAmount" placeholder="Currency" size="6" readonly>
-                    <label class="exchangeLabel" for="">Exchange Value   </label>
-                    <input  type="text" id="exchangeAmount" name="exchangeAmount" placeholder="Value" size="24" readonly>
+                    <label class="exchangeLabel" for="">Exchange Value</label>
+                    <input class="foreignValue"  type="text" id="exchangeAmount" name="exchangeAmount" placeholder="Value" size="24" readonly>
                     <input  type="text" id="exchangeAmount" name="exchangeAmount" placeholder="Currency" size="6" readonly>
-                </div>
-                
-
+                </div>          
             </form>
-
             <script>
                 // Create list of countries in dropdown for both donor and recipient countries.
                 var yourCountry = document.getElementById("yourCountry");
@@ -132,11 +129,11 @@
                     foreignCountry.appendChild(el);
                 }
             </script>
-
-
-
          </section>
         <!-- Footer -->
+         <section>
+            
+         </section>
     
 
 

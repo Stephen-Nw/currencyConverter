@@ -52,3 +52,13 @@
 .foreignValue {
     margin-left: 9px;
 }
+
+/* body {
+    background-color: black;
+    min-height: 100vh;
+    height: 100vh;
+} */
+
+.footer {
+    margin-top: 150px;
+}
