@@ -11,7 +11,23 @@ app.get("/", (req, res) => {
     res.render("index.ejs")
 });
 
-
+app.post("/submit", (req, res) => {
+    const yourCountry = (req.body["yourCountry"]);
+    const foreignCountry = (req.body["foreignCountry"]);
+    const yourAmount = (req.body["yourAmount"]);
+    const baseAmount = 1;
+    const baseCurrency = (req.body["baseCurrency"]);
+    // const exchangeAmount = (req.body["exchangeAmount"]);
+    const exchangeCurrency = (req.body["exchangeCurrency"]);
+    console.log(`Your Country: ${yourCountry}`);
+    console.log(`Foreign Country: ${foreignCountry}`);
+    console.log(`Your Amount: ${yourAmount}`);
+    console.log(`Exchange Rate: ${baseAmount}`);
+    console.log(`Exchange Currency: ${baseCurrency}`);
+    console.log(`Exchange Value: ${exchangeAmount}`);
+    console.log(`Exchange Currency: ${exchangeCurrency}`);
+    res.render("index.ejs")
+});
 
 
 app.listen(port, () => {

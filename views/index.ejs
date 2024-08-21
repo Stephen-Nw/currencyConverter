@@ -55,7 +55,7 @@
           </div>
         <!-- Main -->
          <section class="exchange">
-            <form id="myForm">
+            <form id="myForm" action="/submit" method="POST">
                 <div>
                     <label class="exchangeLabel" for="">Your Country</label>
                     <select id="yourCountry" name="yourCountry">
@@ -76,11 +76,11 @@
                 </div>
                 <div>
                     <label class="exchangeRate">Exchange Rate</label>
-                    <input  type="text" id="exchangeAmount" name="exchangeAmount" value="1" size="24" readonly>
-                    <input  type="text" id="exchangeAmount" name="exchangeAmount" placeholder="Currency" size="6" readonly>
+                    <input  type="text" id="baseAmount" name="baseAmount" value="1" size="24" readonly>
+                    <input  type="text" id="baseCurrency" name="baseCurrency" placeholder="Currency" size="6" readonly>
                     <label class="exchangeLabel" for="">Exchange Value</label>
                     <input class="foreignValue"  type="text" id="exchangeAmount" name="exchangeAmount" placeholder="Value" size="24" readonly>
-                    <input  type="text" id="exchangeAmount" name="exchangeAmount" placeholder="Currency" size="6" readonly>
+                    <input  type="text" id="exchangeCurrency" name="exchangeCurrency" placeholder="Currency" size="6" readonly>
                 </div>          
             </form>
             <script>
