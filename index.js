@@ -24,8 +24,9 @@ app.post("/submit", (req, res) => {
     console.log(`Your Amount: ${yourAmount}`);
     console.log(`Exchange Rate: ${baseAmount}`);
     console.log(`Exchange Currency: ${baseCurrency}`);
-    console.log(`Exchange Value: ${exchangeAmount}`);
     console.log(`Exchange Currency: ${exchangeCurrency}`);
+    console.log(process.env.PASSWORD);
+    console.log(process.env.API_KEY);
     res.render("index.ejs")
 });
 
