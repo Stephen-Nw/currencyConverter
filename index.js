@@ -20,34 +20,47 @@ app.post("/submit", async (req, res) => {
     const foreignCountry = (req.body["foreignCountry"]);
 
     const yourAmount = parseInt(req.body["yourAmount"]);  
-    // const foreignAmount = calculateCurrency(yourAmount, 10);
 
     const baseAmount = 1;
     const baseCurrency = currencySymbol(yourCountry);
 
-    // const exchangeAmount = 
+  
     const exchangeCurrency = currencySymbol(foreignCountry);
 
     try {
         const response = await axios.get(BASE_URL + API_KEY + "/pair/" + baseCurrency + "/" + exchangeCurrency + "/" + yourAmount);
-        const result2 = JSON.stringify(response.data);
+        // const result2 = JSON.stringify(response.data);
         const result = response.data;
         const exchangeValue = result["conversion_rate"];
         const foreignAmount = result["conversion_result"];
         // console.log(result2);
         // console.log(exchangeValue);
         // console.log(foreignAmount);
-        res.render("index.ejs");
+        res.render("index.ejs", {
+            yourCountry: yourCountry,
+            foreignCountry: foreignCountry,
+            yourAmount: yourAmount,
+            foreignAmount: foreignAmount,
+            baseAmount: baseAmount,
+            baseCurrency: baseCurrency,
+            exchangeValue: exchangeValue,
+            exchangeCurrency: exchangeCurrency,
+        });
     } catch (error) {
         res.status(404).send(error.message);
     }
 });
 
+
+
+
+
+
 // Calculate value of foreign currency given base currency and exchange rate
-function calculateCurrency(initialAmount, exchangeRate) {
-    const newAmount = initialAmount * exchangeRate
-    return newAmount
-};
+// function calculateCurrency(initialAmount, exchangeRate) {
+//     const newAmount = initialAmount * exchangeRate
+//     return newAmount
+// };
 
 // Extract currency code from user selection in dropdown
 function currencySymbol(country) {
