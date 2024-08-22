@@ -20,7 +20,7 @@ app.post("/submit", async (req, res) => {
     const foreignCountry = (req.body["foreignCountry"]);
 
     const yourAmount = parseInt(req.body["yourAmount"]);  
-    const foreignAmount = calculateCurrency(yourAmount, 10);
+    // const foreignAmount = calculateCurrency(yourAmount, 10);
 
     const baseAmount = 1;
     const baseCurrency = currencySymbol(yourCountry);
@@ -30,14 +30,16 @@ app.post("/submit", async (req, res) => {
 
     try {
         const response = await axios.get(BASE_URL + API_KEY + "/pair/" + baseCurrency + "/" + exchangeCurrency + "/" + yourAmount);
-        const result = JSON.stringify(response.data);
-        console.log(result);
+        const result2 = JSON.stringify(response.data);
+        const result = response.data;
+        const exchangeValue = result["conversion_rate"];
+        const foreignAmount = result["conversion_result"];
+        // console.log(result2);
+        // console.log(exchangeValue);
+        // console.log(foreignAmount);
         res.render("index.ejs");
     } catch (error) {
-        console.error("Failed to make request:", error.message);
-    res.render("index.ejs", {
-      error: error.message,
-    });
+        res.status(404).send(error.message);
     }
 });
 
