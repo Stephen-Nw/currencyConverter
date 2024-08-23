@@ -56,7 +56,7 @@
         <!-- Main -->
          <section class="exchange">
             <% if (locals.exchangeValue) { %>
-                <form id="myForm" action="/submit" method="POST">
+                <form id="myForm" action="/reset" method="POST">
                     <div>
                         <label class="exchangeLabel" for="">Your Country</label>
                         <input type="text" value="<%= yourCountry %>" size="37" readonly>    
@@ -66,7 +66,7 @@
                     <div>
                         <label class="exchangeLabel" for="">Your Amount</label>
                         <input type="text" id="yourAmount" name="yourAmount" value="<%= yourAmount %>" size="37" readonly>
-                        <input type="submit" value="Go">
+                        <input type="submit" value="Reset">
                         <label class="foreignLabel" for="">Foriegn Amount</label>
                         <input  type="text" id="foreignAmount" name="foreignAmount" value="<%= foreignAmount %>" size="37" readonly>
                     </div>

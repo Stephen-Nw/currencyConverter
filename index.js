@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
     res.render("index.ejs")
 });
 
+app.post("/reset", (req, res) => {
+    res.redirect("/")
+});
+
 app.post("/submit", async (req, res) => {
     const yourCountry = (req.body["yourCountry"]);
     const foreignCountry = (req.body["foreignCountry"]);
