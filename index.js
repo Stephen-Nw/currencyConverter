@@ -33,13 +33,9 @@ app.post("/submit", async (req, res) => {
 
     try {
         const response = await axios.get(BASE_URL + API_KEY + "/pair/" + baseCurrency + "/" + exchangeCurrency + "/" + yourAmount);
-        // const result2 = JSON.stringify(response.data);
         const result = response.data;
         const exchangeValue = result["conversion_rate"].toFixed(2);
         const foreignAmount = result["conversion_result"].toFixed(2);
-        // console.log(result2);
-        // console.log(exchangeValue);
-        // console.log(foreignAmount);
         res.render("index.ejs", {
             yourCountry: yourCountry,
             foreignCountry: foreignCountry,
@@ -55,16 +51,6 @@ app.post("/submit", async (req, res) => {
     }
 });
 
-
-
-
-
-
-// Calculate value of foreign currency given base currency and exchange rate
-// function calculateCurrency(initialAmount, exchangeRate) {
-//     const newAmount = initialAmount * exchangeRate
-//     return newAmount
-// };
 
 // Extract currency code from user selection in dropdown
 function currencySymbol(country) {
