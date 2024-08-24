@@ -10,9 +10,23 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 const BASE_URL = "https://v6.exchangerate-api.com/v6/";
 const API_KEY = process.env.EXCHANGE_RATE_API_KEY;
+const QUOTE_API = "https://zenquotes.io/api/random";
 
-app.get("/", (req, res) => {
-    res.render("index.ejs")
+app.get("/", async (req, res) => {    
+    try {
+        const response = await axios.get(QUOTE_API);
+        const result = response.data;
+        const quote = result[0]["q"];
+        const author = result[0]["a"];
+        console.log(quote);
+        console.log(author);
+        res.render("index.ejs", {
+            author: author,
+            quote: quote,    
+        })        
+    } catch (error) {
+        res.status(404).send(error.message);
+    }
 });
 
 app.post("/reset", (req, res) => {
