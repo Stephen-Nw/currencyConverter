@@ -19,8 +19,12 @@
     /* background-color: blue; */  
 }
 
-.test {
+.quote {
     color: blue;
+    font-style: italic;
+    font-weight: bolder;
+    border-width: 0;
+    /* background-color: rgb(236, 219, 219); */
 }
 
 .jumbotron {

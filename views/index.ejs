@@ -31,13 +31,12 @@
                 <div class="col">
                     <div class="personalCard card-text">
                         <div class="flex-container">
-                            <div class="card shadow-sm text-center text-bg-warning">
+                            <div class="card shadow-sm text-center bg-body-secondary">
                                 <% if (locals.quote) { %>
-                                    <p><%= quote %> -- <%= author %></p>
-                                <% } %>
-                                <!-- <p class="test">The quick brown fox jumped over the lazy sleeping dog. The dog was so lazy 
-                                    that it did not even try to open its eyes to see what was 
-                                    happening around it. Twas the first day of winter and everyone was asleep - Dickens, Charles (1887)</p>                                 -->
+                                    <p class="quote"><%= quote %> -- <%= author %></p>
+                                <% } else { %>
+                                <p class="quote">Your Quote Goes Here</p> 
+                                <% }; %>                               
                             </div>
                         </div>
                     </div>                       
